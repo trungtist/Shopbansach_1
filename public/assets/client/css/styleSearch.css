@@ -1,0 +1,87 @@
+﻿
+#section-1 ul {
+    margin: 0.3rem 0;
+}
+
+#section-1 {
+    background: #f3f3f3;
+}
+
+.list-navigation {
+    color: #9e9fa1;
+    text-align: left;
+    background-color: transparent;
+    position: relative;
+    display: block;
+}
+
+    .list-navigation li:after {
+        content: "/";
+        padding: 0 5px;
+        height: 1px;
+    }
+
+    .list-navigation li a {
+        color: #9e9fa1;
+    }
+
+        .list-navigation li a:hover {
+            color: #007bff;
+        }
+
+    .list-navigation li > a > span:hover {
+        color: #03a9f4;
+        text-decoration: none;
+    }
+
+    .list-navigation li {
+        display: inline-block;
+    }
+
+        .list-navigation li strong {
+            color: #03a9f4;
+            font-weight: normal;
+        }
+
+        .list-navigation li:last-child:after {
+            content: "";
+        }
+
+/* phan ben phai */
+.product-contain-2 .block-1 {
+    padding: 0;
+}
+
+.nav-block-1 img {
+    max-height: 220px;
+    margin: 22px 20px;
+}
+
+.product-badge {
+    top: 20px;
+    left: 30px;
+}
+
+
+.block-1:hover .product-action, .slick-track .nav-slick-track:hover .product-action{
+    right: 30px;
+}
+
+.pag a:hover {
+    background-color: #03a9f4;
+    color: #ffff;
+}
+
+.pag a {
+    margin: 0 3px;
+    width: 36px;
+    background: #fff;
+    height: 36px;
+    font-size: 14px;
+    line-height: 34px;
+    text-align: center;
+    text-decoration: none;
+    padding: 0;
+    box-shadow: 0 2px 10px 0 #d8dde6;
+    float: left;
+}

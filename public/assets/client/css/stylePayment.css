@@ -1,0 +1,35 @@
+﻿.qty-ant .form-control {
+    border: none;
+}
+
+/* ul vi tri*/
+#ul_vitri {
+    height: 100px;
+    overflow-y:auto;
+    z-index: 1;
+}
+
+.ul_none {
+    display: none;
+    border: 1px solid #ccc;
+    border-top: 0;
+}
+
+.ul_none ul li:hover {
+    color: white;
+    cursor: pointer;
+    background-color: #ef3f3f;
+}
+
+.ul_none::outside{
+    display: none;
+}
+
+
+.location {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
+}
