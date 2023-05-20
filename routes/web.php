@@ -27,7 +27,6 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\EvaluateController;
 use Illuminate\Support\Facades\Artisan;
-use Laravel\Socialite\Facades\Socialite;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -70,18 +69,6 @@ Route::get('/products_search', [Homecontroller::class, 'products_search'])->name
 
 //client login
 Route::match(['get', 'post'], '/login', [LoginController::class, 'login'])->name('login');
-
-Route::get('auth/facebook', function () {
-    return Socialite::driver('facebook')->redirect();
-});
-
-Route::get('auth/facebook/callback', function(){
-    return 'Callback login fb';
-});
-
-Route::get('privacy_policy', function(){
-    return '<h2>Chính sách quyền riêng tư</h2>';
-});
 
 // client logout
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
