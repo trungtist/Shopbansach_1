@@ -32,7 +32,7 @@
                             </div>
                             <!-- Login With Facebook -->
                             <div class="social-login text-center margin-bottom-10">
-                                <a href="{{ route('facebook.login') }}" class="social-login--facebook">
+                                <a href="#" class="social-login--facebook">
                                     <img src="{{ asset('assets/client/images/fb-btn.jpg') }}" alt="Facebook">
                                 </a>
                                 <a href="#" class="social-login--google">
