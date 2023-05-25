@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\LoginController as LoginAdmin;
 use App\Http\Controllers\Admin\InvoiceController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\NewsController as NewsClient;
+use App\Http\Controllers\FaceBookController;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
