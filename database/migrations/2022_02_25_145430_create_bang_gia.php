@@ -19,14 +19,14 @@ class CreateBangGia extends Migration
             $table->integer('MocCuoi');
         });
 
-        DB::table('bang_gia')->insert([
-            ['MaGia'=>1 ,'MocDau'=>0 ,'MocCuoi'=>100000],
-            ['MaGia'=>2 ,'MocDau'=>100000 ,'MocCuoi'=>200000],
-            ['MaGia'=>3 ,'MocDau'=>200000 ,'MocCuoi'=>300000],
-            ['MaGia'=>4 ,'MocDau'=>300000 ,'MocCuoi'=>500000],
-            ['MaGia'=>5 ,'MocDau'=>500000 ,'MocCuoi'=>1000000],
-            ['MaGia'=>6 ,'MocDau'=>1000000 ,'MocCuoi'=>5000000],
-        ]);
+        // DB::table('bang_gia')->insert([
+        //     ['MaGia'=>1 ,'MocDau'=>0 ,'MocCuoi'=>100000],
+        //     ['MaGia'=>2 ,'MocDau'=>100000 ,'MocCuoi'=>200000],
+        //     ['MaGia'=>3 ,'MocDau'=>200000 ,'MocCuoi'=>300000],
+        //     ['MaGia'=>4 ,'MocDau'=>300000 ,'MocCuoi'=>500000],
+        //     ['MaGia'=>5 ,'MocDau'=>500000 ,'MocCuoi'=>1000000],
+        //     ['MaGia'=>6 ,'MocDau'=>1000000 ,'MocCuoi'=>5000000],
+        // ]);
     }
 
     /**

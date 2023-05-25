@@ -25,6 +25,11 @@ class User extends Authenticatable
     protected $fillable = [
         'TenDN',
         'MatKhau',
+        'name',
+        'email',
+        'password',
+        'status',
+        'facebook_id'
     ];
 
     /**

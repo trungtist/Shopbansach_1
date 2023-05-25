@@ -27,6 +27,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\EvaluateController;
 use Illuminate\Support\Facades\Artisan;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -44,7 +45,7 @@ use Illuminate\Support\Facades\Artisan;
 // Ngày phát hành:	07/15
 // Mật khẩu OTP:	123456
 
-Route::get('/clear-cache', function() {
+Route::get('/clear-cache', function () {
     $exitCode = Artisan::call('cache:clear');
     return 'ok';
 });
@@ -69,6 +70,12 @@ Route::get('/products_search', [Homecontroller::class, 'products_search'])->name
 
 //client login
 Route::match(['get', 'post'], '/login', [LoginController::class, 'login'])->name('login');
+
+// Facebook Login URL
+Route::prefix('facebook')->name('facebook.')->group(function () {
+    Route::get('auth', [FaceBookController::class, 'loginUsingFacebook'])->name('login');
+    Route::get('callback', [FaceBookController::class, 'callbackFromFacebook'])->name('callback');
+});
 
 // client logout
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
@@ -116,7 +123,7 @@ Route::post('/client_order', [PaymentController::class, 'client_order'])->name('
 
 Route::post('/paymentOnline', [PaymentController::class, 'paymentOnline'])->name('paymentOnline');
 
-Route::match(['get', 'post'],'/payment_cart', [PaymentController::class, 'payment_cart'])->name('payment_cart');
+Route::match(['get', 'post'], '/payment_cart', [PaymentController::class, 'payment_cart'])->name('payment_cart');
 
 // evaluate
 Route::post('/evaluate', [EvaluateController::class, 'evaluate'])->name('evaluate');
@@ -131,9 +138,9 @@ Route::prefix('admin')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->middleware('CheckLogout');
 
     //login
-    Route::match(['get', 'post'],'/login', [LoginAdmin::class, 'login'])->middleware('CheckUser');
+    Route::match(['get', 'post'], '/login', [LoginAdmin::class, 'login'])->middleware('CheckUser');
 
-    Route::match(['get'],'/logout', [LoginAdmin::class, 'logout']);
+    Route::match(['get'], '/logout', [LoginAdmin::class, 'logout']);
 
 
     //news - tin tuc
