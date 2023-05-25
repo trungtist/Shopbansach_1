@@ -12,12 +12,7 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
-    {
-        if (config('app.env') === 'production') {
-            URL::forceScheme('https');
-        }
-    }
+    
 
     /**
      * Bootstrap any application services.
@@ -26,7 +21,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (env('APP_ENV') !== 'local') {
+        if (config('app.env') !== 'local') {
             URL::forceScheme('https');
         }
     }
