@@ -13,7 +13,6 @@ class SetCharset
         $contentType = $response->headers->get('Content-Type');
         if (strpos($contentType, 'text/html') !== false) {
             $response->header('Content-Type', 'text/html; charset=UTF-8');
-            $response->header('Character-Encoding', 'UTF-8');
         }
 
         return $response;
