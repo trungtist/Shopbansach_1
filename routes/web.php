@@ -71,7 +71,10 @@ Route::get('/products_search', [Homecontroller::class, 'products_search'])->name
 Route::match(['get', 'post'], '/login', [LoginController::class, 'login'])->name('login');
 
 //google login
-
+Route::prefix('google')->name('google.')->group( function() {
+    Route::get('login', [GoogleController::class, 'loginWithGoogle'])->name('login');
+    Route::any('callback', [GoogleController::class, 'callbackFromGoogle'])->name('callback');
+});
 
 // client logout
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');

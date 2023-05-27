@@ -32,6 +32,6 @@ return [
     'google' => [
         'client_id' => env('GG_CLIENT_ID'),
         'client_secret' => env('GG_CLIENT_SECRET'),
-        'redirect' => 'http://127.0.0.1:8000/callback/google',
+        'redirect' => 'https://shopbansach1-production.up.railway.app/google/calback/',
     ],
 ];
