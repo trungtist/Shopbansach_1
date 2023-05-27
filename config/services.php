@@ -29,9 +29,9 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
-    'google' => [
-        'client_id' => env('GG_CLIENT_ID'),
-        'client_secret' => env('GG_CLIENT_SECRET'),
-        'redirect' => 'https://shopbansach1-production.up.railway.app/google/calback/',
+    'facebook' => [
+        'client_id' => env('FB_CLIENT_ID'),
+        'client_secret' => env('FB_CLIENT_SECRET'),
+        'redirect' => '/auth/facebook/callback', 
     ],
 ];
