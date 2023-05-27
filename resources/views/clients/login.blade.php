@@ -35,7 +35,7 @@
                                 <a href="#" class="social-login--facebook">
                                     <img src="{{ asset('assets/client/images/fb-btn.jpg') }}" alt="Facebook">
                                 </a>
-                                <a href="{{ url('auth/google') }}" class="social-login--google">
+                                <a href="#" class="social-login--google">
                                     <img src="{{ asset('assets/client/images/gp-btn.jpg') }}" alt="google">
                                 </a>
                             </div>

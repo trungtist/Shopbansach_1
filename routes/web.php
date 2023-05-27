@@ -17,7 +17,6 @@ use App\Http\Controllers\Admin\LoginController as LoginAdmin;
 use App\Http\Controllers\Admin\InvoiceController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\NewsController as NewsClient;
-use App\Http\Controllers\GoogleController;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -72,8 +71,7 @@ Route::get('/products_search', [Homecontroller::class, 'products_search'])->name
 Route::match(['get', 'post'], '/login', [LoginController::class, 'login'])->name('login');
 
 //google login
-Route::get('auth/google', [GoogleController::class, 'signInwithGoogle']);
-Route::get('callback/google', [GoogleController::class, 'callbackToGoogle']);
+
 
 // client logout
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
@@ -335,12 +333,4 @@ Route::prefix('admin')->group(function () {
         Route::post('/delete_message', [EvaluatesController::class, 'delete_message'])->middleware('CheckLogout');
     });
 });
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
+
