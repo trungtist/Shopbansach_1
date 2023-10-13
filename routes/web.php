@@ -129,6 +129,7 @@ Route::post('/Delete_evaluate', [EvaluateController::class, 'Delete_evaluate'])-
 //----------Admin
 Route::prefix('admin')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->middleware('CheckLogout');
+    Route::get('/get_report', [DashboardController::class, 'get_report'])->middleware('CheckLogout');
 
     //login
     Route::match(['get', 'post'],'/login', [LoginAdmin::class, 'login'])->middleware('CheckUser');

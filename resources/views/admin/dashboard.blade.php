@@ -24,7 +24,7 @@
                                 Doanh thu
                             </div>
 
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">0 VNĐ</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800 total_revenue">... VNĐ</div>
 
                         </div>
                         <div class="col-auto">
@@ -44,7 +44,7 @@
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                 Khách hàng đăng ký
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">1</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800 count_customer">0</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-id-card fa-2x text-gray-300"></i>
@@ -63,7 +63,7 @@
                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
                                 Hóa đơn đã thanh toán
                             </div>
-                            <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">0</div>
+                            <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800 paid_invoice">0</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-clipboard-check fa-2x text-gray-300"></i>
@@ -82,7 +82,7 @@
                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                 Hóa đơn chờ thanh toán
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800 unpaid_invoice">0</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
@@ -95,4 +95,39 @@
 @endsection
 
 @section('js')
+<script>
+    function loadReport(){
+        $.ajax({
+            url: '/admin/get_report',
+            type: 'get',
+            dataType: 'json',
+            data: {},
+            success: function(data) {
+                if (data.code == 200) {
+                    $('.total_revenue').html(data.report.total_revenue + " VNĐ");
+                    $('.count_customer').html(data.report.count_customer)
+                    $('.paid_invoice').html(data.report.paid_invoice)
+                    $('.unpaid_invoice').html(data.report.unpaid_invoice)
+                } else {
+                    Swal.fire({
+                        title: "<h4>" + data.msg + "</h4>",
+                        text: "Vui lòng thử lại sau.",
+                        icon: "warning",
+                        showConfirmButton: true
+                    })
+                }
+            },
+            error: function(er) {
+                console.log(er)
+                Swal.fire({
+                    title: "<h4>Có lỗi xảy ra!</h4>",
+                    text: "Vui lòng thử lại sau.",
+                    icon: "warning",
+                    showConfirmButton: true
+                })
+            }
+        })
+    }
+    loadReport();
+</script>
 @endsection
