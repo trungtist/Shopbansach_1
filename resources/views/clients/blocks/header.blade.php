@@ -4,8 +4,8 @@
         <div id="header-1" class="row justify-content-between m-0">
             <div id="header-sec-1">
                 <a href="/">
-                    <img id="logo" src="{{ asset('assets/client/images/logo1.png') }}" alt="Linh - Phong Books"
-                        title="Linh - Phong Books">
+                    <img id="logo" src="{{ asset('assets/client/images/logo1.png') }}" alt="Trung Book Store"
+                        title="Trung Book Store">
                 </a>
             </div>
             <div id="header-sec-2">

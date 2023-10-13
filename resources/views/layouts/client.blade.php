@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="{{ asset('assets/client/images/iconbook.png') }}" type="image/png" />
-    <title>@yield('title') - LinhTrungBook</title>
+    <title>@yield('title') - Trung Book Store</title>
 
     <link rel="stylesheet" href="{{ asset('assets/client/themify-icons/themify-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/client/css/styles.css') }}">
